@@ -1,0 +1,64 @@
+.container img {
+    min-width: 200px;
+    position: static;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-areas: "photo data";
+    margin: 2rem 2rem;
+    padding: 0px;
+    border: 1px solid #e8eaed;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.book-data {
+    grid-area: data;
+    padding: 0rem 1rem 1rem 1rem;
+    text-align: left;
+}
+
+.book-data h1 {
+    color: black;
+}
+
+.book-cover {
+    grid-area: photo;
+    justify-self: center;
+}
+
+@media screen and (max-width: 43rem) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: "photo"
+            "data";
+        border: 1px solid #e8eaed;
+        overflow: hidden;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .book-data {
+        justify-self: center;
+    }
+
+    .book-data h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 1000px) and (max-height: 500px) {
+    .container img {
+        min-width: 100px;
+        position: static;
+    }
+
+    .book-data {
+        grid-area: data;
+        padding: 0rem 1rem 1rem 1rem;
+        text-align: left;
+        font-size: 80%;
+    }
+}

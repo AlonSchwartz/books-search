@@ -1,0 +1,33 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<div class="container">
+    <div class="search-bar">
+        <form (ngSubmit)="search()">
+            <h1>Books Search</h1>
+            <span>
+                <h3>Which book are you looking for?</h3>
+            </span>
+            <input [(ngModel)]=query name="query" placeholder="Search a book">
+            <button class="search-btn" (click)="search()" [disabled]="query == '' ? true : false ">SEARCH</button>
+        </form>
+    </div>
+
+    <div class="results" *ngIf="this.booksData" id="results">
+        <span id="loading"></span>
+        <ul>
+            <li class="booksList" *ngFor="let book of booksData?.items">
+                <app-book-card [book]="book"></app-book-card>
+            </li>
+        </ul>
+    </div>
+
+    <div class="no-search" *ngIf="!this.booksData">
+        <img class="main-photo" src="../../assets/images/library.jpg">
+    </div>
+
+    <div class="no-results" *ngIf="this.booksData?.totalItems == 0">
+        <h3>I didn't find any book matching your keywords search </h3>
+        <img class="main-photo" src="../../assets/images/dog-reading-book.jpg">
+    </div>
+
+</div>
