@@ -90,7 +90,7 @@ input {
     grid-area: results;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     overflow: scroll;
-    height: 540px;
+    height: 70vh;
 }
 
 .no-results,
